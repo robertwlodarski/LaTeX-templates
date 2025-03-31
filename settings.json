@@ -1,0 +1,80 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
+    "vscode-pets.petColor": "black",
+    "vscode-pets.petSize": "large",
+    "vscode-pets.theme": "beach",
+    "editor.rulers": [132],
+
+    // LaTeX Workshop settings
+    "latex-workshop.latex.outDir": "./build",
+    
+    // Custom recipe to move PDF back to the main folder
+    "latex-workshop.latex.recipe.default": "pdflatex ➞ biber ➞ pdflatex (x2) with PDF move",
+    "latex-workshop.latex.recipes": [
+    {
+        "name": "pdflatex with PDF move",
+        "tools": [
+            "pdflatex",
+            "move-pdf"
+        ]
+    },
+    {
+        "name": "pdflatex ➞ biber ➞ pdflatex (x2) with PDF move",
+        "tools": [
+            "pdflatex",
+            "biber",
+            "pdflatex",
+            "pdflatex",
+            "move-pdf"
+        ]
+    }
+],
+    "latex-workshop.latex.tools": [
+    {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-output-directory=build",
+            "%DOC%"
+        ]
+    },
+    {
+        "name": "biber",
+        "command": "biber",
+        "args": [
+            "--output-directory=build",
+            "%DOCFILE%"
+        ]
+    },
+    {
+        "name": "move-pdf",
+        "command": "mv",
+        "args": [
+            "build/%DOCFILE%.pdf",
+            "%DOCFILE%.pdf"
+        ]
+    }
+],
+    "print.folder.fileNames": true,
+    "print.folder.include": [],
+    "print.folder.exclude": [
+        "{bin,obj,out}",
+        "node_modules",
+        "data",
+        "**/*.{bin,exe,dll,hex,pdb,pdf,pfx,png,jpg,gif,bmp,suo,design}"
+    ],
+    "print.folder.maxLines": 1200,
+    "print.folder.maxFiles": 30,
+    "print.folder.includeFileList": false,
+    "editor.dropIntoEditor.preferences": [
+        
+    ]
+}
+
+
